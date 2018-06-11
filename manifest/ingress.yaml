@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: my-jenkins-ingress
+  namespace: gitlab
+spec:
+  rules:
+  - host: my.je.me
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: jenkins-test 
+          servicePort: 80

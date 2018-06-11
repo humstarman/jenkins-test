@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: gitlab 
+  labels:
+    proxy: jenkins
+  name: jenkins-test
+spec:
+  clusterIP: 10.254.100.101
+  ports:
+  - name: http 
+    port: 80 
+    targetPort: 8080
+  selector:
+    component: jenkins
