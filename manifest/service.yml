@@ -6,7 +6,7 @@ metadata:
     proxy: jenkins
   name: jenkins-test
 spec:
-  clusterIP: 10.254.100.101
+  type: ClusterIP
   ports:
   - name: http 
     port: 80 

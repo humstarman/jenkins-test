@@ -9,7 +9,8 @@ FROM openjdk:8u171-jdk-slim-stretch
 RUN mkdir -p /opt
 WORKDIR /opt
 COPY --from=build /opt/jenkins.war /opt/
-# rename svc 
+RUN apt-get update && \
+    apt-get install -y git
 RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
-    rm -rf /tmp/* /usr/share/man /usr/share/doc
+rm -rf /tmp/* /usr/share/man /usr/share/doc
